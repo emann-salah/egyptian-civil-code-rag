@@ -20,7 +20,6 @@ def build_temp_collection(
 
     model = SentenceTransformer(model_name)
 
-    # Create a fresh in-memory ChromaDB client for each experiment.
     client = chromadb.Client()
 
     collection_name = (
