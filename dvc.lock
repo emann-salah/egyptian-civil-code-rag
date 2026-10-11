@@ -1,0 +1,54 @@
+schema: '2.0'
+stages:
+  extract_corpus:
+    cmd: python -m civilcode_rag.ingest.extract_pdf 999
+    deps:
+    - path: data/raw/egyptian_civil_code.pdf
+      hash: md5
+      md5: 5086ef5f16f15d856278db943e58e948
+      size: 2599703
+    - path: src/civilcode_rag/ingest/arabic_utils.py
+      hash: md5
+      md5: 305e1f2ea23f08e05648ebd258146c1a
+      size: 3217
+    - path: src/civilcode_rag/ingest/extract_pdf.py
+      hash: md5
+      md5: 23693cd9315ad870f0ef8f3a52de2b24
+      size: 4794
+    - path: src/civilcode_rag/schemas.py
+      hash: md5
+      md5: 59c04f4cfc2822b74123e3a94506d704
+      size: 448
+    outs:
+    - path: data/processed/articles.json
+      hash: md5
+      md5: 640a81eed74a451d2fec8cbbb9e7d987
+      size: 1245217
+  validate_corpus:
+    cmd: pytest tests/test_corpus.py -v
+    deps:
+    - path: data/processed/articles.json
+      hash: md5
+      md5: 640a81eed74a451d2fec8cbbb9e7d987
+      size: 1245217
+    - path: tests/test_corpus.py
+      hash: md5
+      md5: 8ec1f86f35f1375aece6d0373c7ca440
+      size: 3794
+  build_index:
+    cmd: python -m civilcode_rag.build_index
+    deps:
+    - path: data/processed/articles.json
+      hash: md5
+      md5: 640a81eed74a451d2fec8cbbb9e7d987
+      size: 1245217
+    - path: src/civilcode_rag/build_index.py
+      hash: md5
+      md5: ec1702e02c3079684aae1b7076d6bf4b
+      size: 1636
+    outs:
+    - path: data/chroma_db
+      hash: md5
+      md5: a3adedfb663ca362eee26da34ea997ea.dir
+      size: 12526070
+      nfiles: 6

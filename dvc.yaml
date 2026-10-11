@@ -1,0 +1,24 @@
+stages:
+  extract_corpus:
+    cmd: python -m civilcode_rag.ingest.extract_pdf 999
+    deps:
+      - data/raw/egyptian_civil_code.pdf
+      - src/civilcode_rag/ingest/extract_pdf.py
+      - src/civilcode_rag/ingest/arabic_utils.py
+      - src/civilcode_rag/schemas.py
+    outs:
+      - data/processed/articles.json
+
+  validate_corpus:
+    cmd: pytest tests/test_corpus.py -v
+    deps:
+      - data/processed/articles.json
+      - tests/test_corpus.py
+
+  build_index:
+    cmd: python -m civilcode_rag.build_index
+    deps:
+      - data/processed/articles.json
+      - src/civilcode_rag/build_index.py
+    outs:
+      - data/chroma_db

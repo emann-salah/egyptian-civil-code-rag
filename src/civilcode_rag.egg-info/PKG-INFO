@@ -1,0 +1,12 @@
+Metadata-Version: 2.4
+Name: civilcode-rag
+Version: 0.1.0
+Summary: RAG system for the Egyptian Civil Code
+Requires-Python: >=3.10
+Requires-Dist: pydantic>=2.6.0
+Requires-Dist: pdfplumber>=0.11.0
+Requires-Dist: chromadb>=0.5.0
+Requires-Dist: sentence-transformers>=3.0.0
+Requires-Dist: fastapi>=0.110.0
+Requires-Dist: uvicorn[standard]>=0.29.0
+Requires-Dist: mlflow>=2.12.0
