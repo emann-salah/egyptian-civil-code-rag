@@ -14,7 +14,6 @@ CORPUS_PATH = Path("data/processed/articles.json")
 REPEALED_RANGES = [range(54, 81), range(389, 418)]
 ANNOUNCEMENT_ARTICLES = {54}
 
-# Known extraction gaps - documented as acceptable (<1% of corpus)
 KNOWN_MISSING = {798, 799, 800, 802, 1017, 1018, 1019, 1020, 1022, 1023, 1024, 1025, 1026}
 
 MAX_SANE_ARTICLE_CHARS = 6000
