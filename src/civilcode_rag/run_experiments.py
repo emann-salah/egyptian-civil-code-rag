@@ -6,7 +6,6 @@ from sentence_transformers import SentenceTransformer
 
 from civilcode_rag.eval_questions import EVAL_QUESTIONS
 
-
 ARTICLES_PATH = "data/processed/articles.json"
 COLLECTION_NAME_PREFIX = "exp"
 

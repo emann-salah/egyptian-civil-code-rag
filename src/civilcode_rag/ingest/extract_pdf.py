@@ -4,8 +4,10 @@ import sys
 
 import pdfplumber
 
+from civilcode_rag.ingest.arabic_utils import (
+    fix_pdfplumber_arabic_cell,
+)
 from civilcode_rag.schemas import ArticleRecord
-from civilcode_rag.ingest.arabic_utils import fix_pdfplumber_arabic_cell, extract_article_number
 
 ARTICLE_EN_RE = re.compile(r"^A?rticle\s+(\d+)")
 REPEALED_RANGE_RE = re.compile(r"Articles?\s+(\d+)\s*-\s*(\d+)\s+(?:have been )?repealed", re.IGNORECASE)

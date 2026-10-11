@@ -9,16 +9,16 @@ stages:
       size: 2599703
     - path: src/civilcode_rag/ingest/arabic_utils.py
       hash: md5
-      md5: 305e1f2ea23f08e05648ebd258146c1a
-      size: 3217
+      md5: 02537336422ea950635e9a459ab796d9
+      size: 2492
     - path: src/civilcode_rag/ingest/extract_pdf.py
       hash: md5
-      md5: 23693cd9315ad870f0ef8f3a52de2b24
-      size: 4794
+      md5: b9183e04b0b56a1374fe494bc1068c4e
+      size: 4232
     - path: src/civilcode_rag/schemas.py
       hash: md5
-      md5: 59c04f4cfc2822b74123e3a94506d704
-      size: 448
+      md5: 15e6059937b8b03d47a850650c71f0fe
+      size: 380
     outs:
     - path: data/processed/articles.json
       hash: md5
@@ -33,8 +33,8 @@ stages:
       size: 1245217
     - path: tests/test_corpus.py
       hash: md5
-      md5: 8ec1f86f35f1375aece6d0373c7ca440
-      size: 3794
+      md5: 80556491474648f300a1ec50ef5539ee
+      size: 3572
   build_index:
     cmd: python -m civilcode_rag.build_index
     deps:
@@ -44,8 +44,8 @@ stages:
       size: 1245217
     - path: src/civilcode_rag/build_index.py
       hash: md5
-      md5: ec1702e02c3079684aae1b7076d6bf4b
-      size: 1636
+      md5: cccb463c961c4f36018c4b575afa23b3
+      size: 1385
     outs:
     - path: data/chroma_db
       hash: md5
