@@ -160,7 +160,6 @@ if __name__ == "__main__":
     try:
         client.create_registered_model(model_registry_name)
     except mlflow.exceptions.MlflowException:
-        # The registered model may already exist.
         pass
 
     version = client.create_model_version(
