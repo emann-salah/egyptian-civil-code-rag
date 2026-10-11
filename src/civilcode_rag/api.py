@@ -16,7 +16,6 @@ collection = client.get_or_create_collection(COLLECTION_NAME)
 
 
 class AskRequest(BaseModel):
-    # strip_whitespace + min_length=1 means "" and "   " are both rejected
     question: Annotated[str, StringConstraints(strip_whitespace=True, min_length=1)]
 
 
