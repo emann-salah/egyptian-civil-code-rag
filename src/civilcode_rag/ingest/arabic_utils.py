@@ -4,9 +4,7 @@ ARABIC_DIGITS = "٠١٢٣٤٥٦٧٨٩"
 WESTERN_DIGITS = "0123456789"
 DIGIT_TRANSLATION = str.maketrans(ARABIC_DIGITS, WESTERN_DIGITS)
 
-# Parentheses (and brackets, for safety) flip to their mirror image when a
-# line gets reversed - "(" needs to become ")" and vice versa, not just move
-# position like the digits do.
+
 MIRROR_TRANSLATION = str.maketrans("()[]{}", ")(][}{")
 
 DIGIT_PATTERN = re.compile(r'[٠-٩0-9]+')
