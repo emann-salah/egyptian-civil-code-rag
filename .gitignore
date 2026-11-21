@@ -5,4 +5,5 @@ mlflow.db
 mlruns/
 .pytest_cache/
 *.egg-info/
-.envartifacts/
+.env
+artifacts/
